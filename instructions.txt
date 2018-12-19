@@ -1,0 +1,47 @@
+== Instructions ==
+
+* Install required libraries
+
+sudo pip install -r requirements.txt
+
+
+* Install Spark Locally
+
+wget http://apache.mirrors.tds.net/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
+tar zxvf spark-2.4.0-bin-hadoop2.7.tgz
+sudo mv spark-2.4.0-bin-hadoop2.7 /usr/local/spark
+
+
+* Define Spark Home (add the following to your $HOME/.bash_profile)
+
+export SPARK_HOME=/usr/local/spark
+
+
+* Add Spark to your PATH (add the following to your $HOME/.bash_profile)
+
+export PATH=$PATH:$SPARK_HOME/bin
+
+
+* Make sure to reload your bash config
+
+. $HOME/.bash_profile
+
+
+* Run Job
+
+spark-submit --packages mysql:mysql-connector-java:5.1.39 job.py
+
+
+* Check Results
+
+cat output.txt
+
+
+* Install pytest to run unit tests
+
+pip install -U pytest
+
+
+* Run Unit Tests
+
+pytest

@@ -1,0 +1,4 @@
+py4j==0.10.7
+requests==2.20.1
+psutil==5.4.8
+pyspark==2.4.0
